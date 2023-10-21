@@ -35,6 +35,12 @@ src/core/job.c:768 (job_emit_done_message)
                 start
 ```
 
+## Install
+
+   ```bash
+   curl -fL https://raw.githubusercontent.com/black-desk/fmtjournal/master/scripts/get.sh | sh
+   ```
+
 ## Customization
 
 Check golang text/template documentations first.
