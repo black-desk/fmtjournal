@@ -1,4 +1,4 @@
-# journalfmt
+# fmtjournal
 
 `journalctl` not print `CODE_FILE` and `CODE_LINE` or any custom fields with
 default output option. And when running with `--output json` or `verbose`,
@@ -12,7 +12,7 @@ and use a golang template to format that json.
 By default it print something like this:
 
 ```
-> journalctl -f -b -o json --all | journalfmt
+> journalctl -f -b -o json --all | fmtjournal
 2023-05-18 13:45:38.001106 +0800 CST   INFO     systemd  [1]
 src/core/job.c:581 (job_emit_start_message)
         Starting Hostname Service...
@@ -59,5 +59,5 @@ Here are something you should know:
 
 ## Tips
 
-Copy ./tools/journalctl to your ~/.local/bin then
+Copy [this scripts](./tools/journalctl) to your ~/.local/bin then
 your journalctl output is format automatically.
