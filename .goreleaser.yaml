@@ -1,7 +1,5 @@
 builds:
-  - main: ./cmd/cgtproxy
-    binary: cgtproxy
-    flags:
+  - flags:
       - -v
     goos:
       - linux
