@@ -1,10 +1,19 @@
 # fmtjournal
 
 `journalctl` not print `CODE_FILE` and `CODE_LINE` or any custom fields with
-default output option. And when running with `--output json` or `verbose`,
-`journalctl` print all fields journald received.
+default output option.
 
-But it has no custom format option.
+And when running with `--output json` or `verbose`,
+`journalctl` print all fields journald received.
+That's nice, but it is not for human reading:
+
+```
+{"_RUNTIME_SCOPE":"system","SYSLOG_FACILITY":"0","_HOSTNAME":"DESKTOP-GICJU6Q","__MONOTONIC_TIMESTAMP":"3305808","_TRANSPORT":"kernel","__REALTIME_TIMESTAMP":"1687539615911669","_MACHINE_ID":"637a687e69f04cd0b>
+{"PRIORITY":"6","__SEQNUM":"163463","__SEQNUM_ID":"e41457c2a3864c389cb340178b20513b","_MACHINE_ID":"637a687e69f04cd0bb298de2c737fc13","__MONOTONIC_TIMESTAMP":"3305822","_TRANSPORT":"kernel","_HOSTNAME":"DESKTO>
+{"_TRANSPORT":"kernel","MESSAGE":"KERNEL supported cpus:","__CURSOR":"s=e41457c2a3864c389cb340178b20513b;i=27e88;b=e1d03b572fbf4c66b1c18be1d5cfe57d;m=327164;t=5feceef59cf09;x=31df3e70a561cd30","SYSLOG_IDENTIFI>
+```
+
+And it just has no custom format option.
 
 So I write this little program to get json output from journalctl via **stdin**,
 and use a golang template to format that json.
@@ -34,6 +43,8 @@ src/core/job.c:768 (job_emit_done_message)
         JOB_TYPE=
                 start
 ```
+
+And it can be fully customized.
 
 ## Install
 
