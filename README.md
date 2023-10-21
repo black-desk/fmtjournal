@@ -44,15 +44,20 @@ Then go to check the [default format](./consts/consts.go),
 Here are something you should know:
 
 - `{{.timestamp}}`
-  
+
   Formatted `__REALTIME_TIMESTAMP` stored in `.timestamp`
 
 - `{{.extra}}`
-  
+
   Custom fields not list in `man systemd.journal-fields` is place in a
   `map[string]any` at `.extra`
 
 - `{{indent <number> string}}`
-  
+
   There is a helper function `indent` you can use it to format your string, it
   replace all `\n` in your string with `\n` and `\t` \* `<number>`
+
+## Tips
+
+Copy ./tools/journalctl to your ~/.local/bin then
+your journalctl output is format automatically.

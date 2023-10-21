@@ -18,14 +18,14 @@ import (
 	"github.com/adrg/xdg"
 	"github.com/spf13/cobra"
 
-	"github.com/black-desk/journalfmt/consts"
-	"github.com/black-desk/journalfmt/types"
+	"github.com/black-desk/fmtjournal/consts"
+	"github.com/black-desk/fmtjournal/types"
 )
 
 var flags types.Flags
 
 var rootCmd = &cobra.Command{
-	Use:   "journalfmt",
+	Use:   "fmtjournal",
 	Short: "A tool format journalctl json stream from stdin.",
 	RunE: func(_ *cobra.Command, args []string) (err error) {
 		return rootCmdRun(flags)

@@ -1,4 +1,4 @@
-module github.com/black-desk/journalfmt
+module github.com/black-desk/fmtjournal
 
 go 1.20
 

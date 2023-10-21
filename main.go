@@ -1,6 +1,6 @@
 package main
 
-import "github.com/black-desk/journalfmt/cmd"
+import "github.com/black-desk/fmtjournal/cmd"
 
 func main() {
 	cmd.Execute()
