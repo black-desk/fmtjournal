@@ -49,7 +49,7 @@ And it can be fully customized.
 ## Install
 
    ```bash
-   curl -fL https://raw.githubusercontent.com/black-desk/fmtjournal/master/scripts/get.sh | sh
+   curl -fL https://raw.githubusercontent.com/black-desk/fmtjournal/master/scripts/get.sh | bash
    ```
 
 ## Customization
