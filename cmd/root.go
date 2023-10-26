@@ -86,7 +86,7 @@ func rootCmdRun(flags types.Flags) (err error) {
 func loadFmtFile(path string) (ret string, err error) {
 	if !filepath.IsAbs(path) {
 		path, err = xdg.SearchConfigFile(
-			filepath.Join("journalfmt", path),
+			filepath.Join("fmtjournal", path),
 		)
 		if err != nil {
 			err = os.ErrNotExist
@@ -254,7 +254,7 @@ func init() {
 			"Format string of journal logs store in a file, "+
 			"last \\n ignored. "+
 			"If path is relative, it will be searched in "+
-			"`${XDG_CONFIG_HOME}/journalfmt/`.\n"+
+			"`${XDG_CONFIG_HOME}/fmtjournal/`.\n"+
 			"If that file not existed, "+
 			"fallback to the builtin format.",
 	)
