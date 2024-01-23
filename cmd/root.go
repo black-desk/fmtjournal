@@ -118,6 +118,16 @@ func printWithMap(tmpl *template.Template, journalEntryMap map[string]any) (err 
 	journalExtraMap := map[string]any{}
 
 	for k := range journalEntryMap {
+		if k == "MESSAGE" {
+			if interfaces, ok := journalEntryMap[k].([]interface{}); ok {
+				bytes := []byte{}
+				for i := range interfaces {
+					bytes = append(bytes, byte(interfaces[i].(float64)))
+				}
+				journalEntryMap[k] = string(bytes)
+			}
+		}
+
 		if isWellKnowField(k) {
 			continue
 		}
