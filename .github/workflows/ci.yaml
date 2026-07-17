@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2025 Chen Linxuan <me@black-desk.cn>
+#
+# SPDX-License-Identifier: MIT
+
+name: Continuous integration
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * 0" # Every Sunday at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  generic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: black-desk/workflows/generic@master
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: black-desk/workflows/format@master
+
+  go:
+    permissions:
+      id-token: write
+      contents: write
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: black-desk/workflows/go@master
+
+  pass:
+    name: pass
+    if: always()
+    needs:
+      - generic
+      - format
+      - go
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}

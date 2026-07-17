@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Chen Linxuan <me@black-desk.cn>
+//
+// SPDX-License-Identifier: MIT
+
 package cmd
 
 import (
@@ -19,14 +23,16 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/black-desk/fmtjournal/consts"
+	"github.com/black-desk/fmtjournal/internal/version"
 	"github.com/black-desk/fmtjournal/types"
 )
 
 var flags types.Flags
 
 var rootCmd = &cobra.Command{
-	Use:   "fmtjournal",
-	Short: "A tool format journalctl json stream from stdin.",
+	Use:     "fmtjournal",
+	Short:   "A tool format journalctl json stream from stdin.",
+	Version: version.Version,
 	RunE: func(_ *cobra.Command, args []string) (err error) {
 		return rootCmdRun(flags)
 	},

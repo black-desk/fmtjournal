@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Chen Linxuan <me@black-desk.cn>
+//
+// SPDX-License-Identifier: MIT
+
 module github.com/black-desk/fmtjournal
 
 go 1.20

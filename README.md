@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Chen Linxuan <me@black-desk.cn>
+
+SPDX-License-Identifier: MIT
+-->
+
 # fmtjournal
 
 `journalctl` not print `CODE_FILE` and `CODE_LINE` or any custom fields with

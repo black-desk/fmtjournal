@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Chen Linxuan <me@black-desk.cn>
+//
+// SPDX-License-Identifier: MIT
+
 package consts
 
 var (

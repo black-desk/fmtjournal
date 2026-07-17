@@ -1,6 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Chen Linxuan <me@black-desk.cn>
+#
+# SPDX-License-Identifier: MIT
+
+version: 2
+
+release:
+  prerelease: auto
+
 builds:
-  - flags:
+  - main: .
+    binary: fmtjournal
+    env:
+      - CGO_ENABLED=0
+    flags:
       - -v
+    ldflags:
+      - -X github.com/black-desk/fmtjournal/internal/version.Version=v{{.Version}}
     goos:
       - linux
     goarch:
