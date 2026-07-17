@@ -1,3 +1,7 @@
 #!/bin/env sh
 
+# SPDX-FileCopyrightText: 2025 Chen Linxuan <me@black-desk.cn>
+#
+# SPDX-License-Identifier: MIT
+
 /usr/bin/journalctl -o json --all "$@" | fmtjournal | less -r

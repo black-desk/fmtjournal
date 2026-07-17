@@ -2,10 +2,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-package main
+package version
 
-import "github.com/black-desk/fmtjournal/cmd"
-
-func main() {
-	cmd.Execute()
-}
+var Version = "v0.1.0"
